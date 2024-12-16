@@ -15,21 +15,31 @@ document.querySelector(".btn")?.addEventListener("click", (e) => {
         let degree = document.querySelector("#degree");
         let additionalInfo = document.querySelector("#additional_Info");
         let skills = document.querySelector("#skills_list");
-        let company = document.querySelector("#company");
         let job = document.querySelector("#job");
         let date = document.querySelector("#date");
         let description = document.querySelector("#description");
-        let userURL = document.querySelector("#userURL");
-        // unique path create
-        let userElement = userURL.value;
-        let uniquePath = `resume_${userElement.replace(/\s/g, '_')}_cv.html`;
         // profile elements
         let profilepictureFile = profile.files?.[0];
-        let profilepictureURL = profilepictureFile ? URL.createObjectURL(profilepictureFile) : '';
+        let profilepictureURL = profilepictureFile
+            ? URL.createObjectURL(profilepictureFile)
+            : "";
         // Check if all fields have values
-        if (profile && name && email && phone && address && school && degree && additionalInfo && skills && company && job && date && description && userURL) {
+        if (profile &&
+            name &&
+            email &&
+            phone &&
+            address &&
+            school &&
+            degree &&
+            additionalInfo &&
+            skills &&
+            job &&
+            date &&
+            description) {
             let resumeOutput = `
-        ${profilepictureURL ? `<img src="${profilepictureURL}" alt="profile picture" class="profile_picture">` : ''}
+        ${profilepictureURL
+                ? `<img src="${profilepictureURL}" alt="profile picture" class="profile_picture">`
+                : ""}
         <h2>Personal information</h2>
         <p><strong>Name:</strong> ${name.value}</p>
         <p><strong>Email:</strong> ${email.value}</p>
@@ -45,7 +55,6 @@ document.querySelector(".btn")?.addEventListener("click", (e) => {
         <p> ${skills.value}</p>
         <hr />
         <h2>Experience</h2>
-        <p><strong>Company:</strong> ${company.value}</p>
         <p><strong>Job Title:</strong> ${job.value}</p>
         <p><strong>Date:</strong> ${date.value}</p>
         <p><strong>Description:</strong> ${description.value}</p>
@@ -53,37 +62,20 @@ document.querySelector(".btn")?.addEventListener("click", (e) => {
             let finalResume = document.querySelector("#resume_generated");
             if (finalResume) {
                 finalResume.innerHTML = resumeOutput;
-                finalResume.style.display = "block"; // Show the resume after form submission
+                finalResume.style.display = "block"; // Show the resume
                 finalResume.classList.remove("hidden");
-                // create download link
-                let downloadLink = document.createElement("a");
-                downloadLink.href = "data:text/html;charset= UTF-8," + encodeURIComponent(resumeOutput);
-                downloadLink.download = uniquePath;
-                downloadLink.textContent = "Download your resume";
+                // Create a container for the button
                 let buttonContainer = document.createElement("div");
                 buttonContainer.id = "button_container";
-                buttonContainer.appendChild(downloadLink);
-                // create PDF download button
+                // Create PDF download button
                 let downloadPDFButton = document.createElement("button");
                 downloadPDFButton.textContent = "Download your resume as PDF";
                 downloadPDFButton.addEventListener("click", () => {
                     window.print();
                 });
+                // Append button to the container
                 buttonContainer.appendChild(downloadPDFButton);
-                // create shareable link button
-                let shareLinkButton = document.createElement("button");
-                shareLinkButton.textContent = "Copy shareable link";
-                shareLinkButton.addEventListener("click", () => {
-                    try {
-                        let shareableLink = `https://yourdomain.vercel.app/resume/${userElement.replace(/\s+/g, "_")}_cv.html`;
-                        navigator.clipboard.writeText(shareableLink);
-                        alert("Shareable link has been copied to clipboard.");
-                    }
-                    catch (e) {
-                        alert("Failed to copy shareable link. Please try again.");
-                    }
-                });
-                buttonContainer.appendChild(shareLinkButton);
+                // Append the container to the final resume
                 finalResume.appendChild(buttonContainer);
             }
             else {
@@ -91,10 +83,7 @@ document.querySelector(".btn")?.addEventListener("click", (e) => {
             }
         }
         else {
-            console.error("Some fields are missing");
+            console.error("Form elements are missing");
         }
-    }
-    else {
-        console.error("Form elements are missing");
     }
 });
