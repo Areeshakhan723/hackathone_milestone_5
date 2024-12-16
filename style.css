@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color:#ebeaea;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* container */
+#cantainer {
+  margin: 2rem 0;
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  font-size: 19px;
+  color: #4d4c4c;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+input,
+textarea {
+  margin-top: 3px;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.profile_picture {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4069b0;
+  width: 150px;
+  height: 150px;
+  margin-left: 0;
+  object-fit: cover;
+}
+/* Personal information section */
+.personal_information {
+  border: 1px solid #606060;
+  border-radius: 1rem;
+  padding: 15px;
+}
+
+h3 {
+  text-align: center;
+  font-size: x-large;
+}
+
+h2 {
+  color: #024083;
+}
+
+section {
+  margin-top: 1rem;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  padding: 15px;
+}
+
+/* Button Container */
+#btn_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 10px;
+  background-color:#ebeaea;
+  color:black;
+  font-weight:600;
+  border-radius: 5px;
+  border: none;
+  margin: 2rem;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Resume Generated Container */
+#resume_generated {
+  width: 90%;
+  display: none; /* Initially hidden */
+  height: auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: white;
+  margin: 20px auto;
+}
+
+.resume_generated {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0%;
+}
+
+#button_container button {
+  background-color:#ebeaea;
+  color:black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight:600;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+#button_container button:hover {
+  transform: scale(1.05);
+}

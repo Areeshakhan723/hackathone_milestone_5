@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milestone 5</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="cantainer">
+        <h1>Unique path and shareable link by Areesha Khan</h1>
+        <form id="resume_form">
+          <!-- profile picture section -->
+          <section class="profile">
+            <label for="profile">Profile:</label>
+            <input
+              type="file"
+              id="profile_picture"
+              name="profile"
+              required
+              accept="image/*"
+            />
+          </section>
+          <!-- personal inforamation section -->
+          <section class="personal_information">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Enter your name"
+            />
+
+            <label for="email">Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email address"
+            />
+
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              placeholder="Enter your phone number"
+            />
+
+            <label for="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              required
+              placeholder="Enter your address"
+            />
+          </section>
+
+          <!-- Education Section -->
+          <section class="education">
+            <h3>Education</h3>
+            <label for="school">School:</label>
+            <input
+              type="text"
+              id="school"
+              name="School"
+              required
+              placeholder="Enter your School"
+            />
+            <label for="degree">Degree:</label>
+            <input
+              type="text"
+              id="degree"
+              name="degree"
+              required
+              placeholder="Enter your degree"
+            />
+            <label for="additional_information"
+              >Additional inforamation (optional):</label
+            >
+            <input
+              type="text"
+              id="additional_Info"
+              placeholder="Add your Aditional Information"
+            />
+          </section>
+
+          <!-- skills Section -->
+          <section class="skills">
+            <h3>Skills</h3>
+            <label for="skills">Skills List:</label>
+            <input
+              type="text"
+              id="skills_list"
+              name="skills"
+              required
+              placeholder="Add your skills"
+            />
+          </section>
+
+          <!-- experience section -->
+          <section class="work_experience">
+            <h3>Work Experience</h3>
+
+            <label for="job">job title</label>
+            <input
+              type="text"
+              id="job"
+              name="job"
+              required
+              placeholder="Add your job type"
+            />
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required />
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Write your work experience here"
+            ></textarea>
+          </section>
+
+          <!-- submit button -->
+          <div id="btn_div">
+            <button class="btn">Generate your Resume</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="resume_generated" class="resume_generated">
+      <!-- resume generated -->
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
