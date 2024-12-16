@@ -5,28 +5,15 @@ Here's a summary of its content:
 
 ### Objective:
 
-Generate a unique URL for each resume based on the user’s username, allowing the resume to be shared and downloaded.
+Generate a resume and  downloaded as a PDF.
 
 ## Requirements:
 
 When a user creates a resume, generate a unique URL (e.g., username.vercel.app/resume).
 <ul>
-  <li>
     Provide options for users to:
-  </li>
-  <li>
-    Share their resume via a link.
-  </li>
+  
   <li>
     Download the resume as a PDF.
   </li>
 </ul>
-
-### Scoring Breakdown:
-
-### Unique URL Generation:
-
-Does the system generate a unique path for each user’s resume based on their username?
-Link Sharing and PDF Download :
-
-Can users share their resume link, and does the download function work properly?
